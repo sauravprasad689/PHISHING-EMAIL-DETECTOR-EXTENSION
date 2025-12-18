@@ -1,1 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Email Security Report</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <link rel="stylesheet" href="report.css">
+</head>
+<body>
 
+  <div class="top-banner">
+    🛡️ AI Email Threat Analysis Report
+  </div>
+
+  <div class="report-container" id="reportContainer">
+    <div id="content"></div>
+  </div>
+
+  <div class="actions">
+    <button onclick="downloadReport()">⬇ Download Report</button>
+  </div>
+
+  <div class="advisory">
+    ⚠️ Never trust urgent emails asking for credentials or payments.  
+    Always verify the sender from official channels.
+  </div>
+
+  <script src="report.js"></script>
+</body>
+</html>
