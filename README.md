@@ -1,219 +1,215 @@
-###################################################################
+Perfect 👍
+Now I’ll make it:
 
+• Clean
+• Fully copyable
+• Professional
+• Stylish but GitHub-friendly
+• No weird Unicode blocks that break formatting
 
-🜂 GMAIL AI PHISH GUARD 🜂
+This version will look premium on GitHub and still feel powerful.
 
-->** AI-Powered Gmail Threat Engine │
-**
+---
 
-**Hybrid phishing detection Chrome Extension built using Manifest V3 architecture.**
+# Gmail AI Phish Guard
 
-_⟁ SYSTEM OVERVIEW_
+AI-powered Gmail phishing, spam, and malicious email detection Chrome Extension.
+
+A hybrid threat detection engine that combines heuristic analysis with lightweight ML scoring to analyze emails directly inside Gmail in real-time.
+
+---
+
+## Project Overview
 
 Gmail AI Phish Guard performs:
 
-▣ Real-time email extraction
-▣ Hybrid threat analysis
-▣ Risk score generation (0–100%)
-▣ Intelligent verdict classification
-▣ Full threat intelligence dashboard
+* Real-time email extraction from Gmail
+* Hybrid threat analysis engine
+* Risk score generation (0–100%)
+* Email classification: Safe / Suspicious / Malicious
+* Full interactive threat intelligence report
 
-Threat Levels:
+This project is built using Chrome Extension Manifest V3 architecture.
 
-⟡ SAFE
-⟡ SUSPICIOUS
-⟡ MALICIOUS
+---
 
-⌬ HYBRID DETECTION ENGINE
+## Detection Engine Architecture
 
 Core logic implemented in:
 
 background.js 
 
-background
-
-Architecture:
+Hybrid scoring model:
 
 Heuristic Engine (60%)
-        +
-Lightweight ML Model (40%)
-        =
++
+Lightweight ML Scoring (40%)
+============================
+
 Final Risk Score
 
-Heuristic Analysis Detects:
+### Heuristic Detection Identifies:
 
-⟢ Urgency manipulation
-⟢ Credential harvesting patterns
-⟢ Suspicious external links
-⟢ Attachment bait language
+* Urgency manipulation phrases (e.g., "act now", "verify immediately")
+* Credential harvesting attempts
+* Suspicious external links
+* Attachment bait patterns
+* Banking impersonation keywords
 
-Lightweight ML Scoring:
+### Lightweight ML Model
 
-Keyword-weighted probability scoring.
+Keyword-weighted scoring system for phishing probability patterns.
 
-Final Verdict Logic:
+### Verdict Logic
 
-Score > 70    → Malicious
-Score 41–70   → Suspicious
-Score ≤ 40    → Safe
+* Risk Score > 70 → Malicious
+* Risk Score 41–70 → Suspicious
+* Risk Score ≤ 40 → Safe
 
-⌁ EMAIL EXTRACTION LAYER
+---
+
+## Email Extraction Layer
 
 Handled by:
 
 content.js 
 
-content
-
 Extracts:
 
-Subject
+* Subject
+* Sender email
+* Email body
 
-Sender
+Data is passed securely to the background service worker for analysis.
 
-Email Body
+---
 
-Communicates securely with background service worker.
-
-⧉ EXTENSION CONFIGURATION
+## Extension Configuration
 
 Defined in:
 
 manifest.json 
 
-manifest
+Includes:
 
-Features:
+* Manifest Version 3
+* Service Worker background script
+* Gmail host permissions
+* Content script injection
+* Popup interface binding
 
-⟡ Manifest V3
-⟡ Service Worker background script
-⟡ Gmail host permissions
-⟡ Content script injection
-⟡ Popup UI binding
+---
 
-◈ POPUP CONTROL PANEL
+## Popup Control Interface
 
 Files:
 
 popup.html 
-
-popup
-
-
 popup.js 
 
-popup
+Features:
 
-Capabilities:
+* Analyze active Gmail email
+* Display verdict and risk score
+* Show threat indicators
+* Display rotating security awareness tips
 
-▸ Analyze active Gmail email
-▸ Display dynamic verdict
-▸ Show risk percentage
-▸ Render detected indicators
-▸ Security awareness tip rotation
+---
 
-⟁ INTELLIGENCE DASHBOARD
+## Full Intelligence Report Dashboard
 
 Files:
 
 report.html 
-
-report
-
-
 report.js 
 
-report
+Displays:
 
-Dashboard Includes:
+* Animated risk meter
+* Detailed threat indicators list
+* AI explanation of score
+* Recommended security actions
 
-◉ Animated Risk Meter
-◉ Threat Indicators List
-◉ AI Explanation
-◉ Recommended Security Actions
+---
 
-⟐ UTILITY MODULE
+## Utility Module
 
 utils.js 
 
-utils
+Maps risk score to visual status colors:
 
-Risk Color Mapping:
+* Green
+* Orange
+* Red
 
-Green → Safe
-Orange → Suspicious
-Red → Malicious
+---
 
-⧗ AUTHENTICATION INTERFACE (Frontend Demo)
+## Authentication UI (Frontend Demo)
 
 register.html 
-
-register
-
-
 login.html 
-
-login
-
-
 success.html 
 
-success
-
 Note:
-Frontend-only demo authentication using localStorage.
+This is a frontend-only demo authentication system using localStorage for simulation purposes.
 
-⎈ INSTALLATION GUIDE
-1. git clone https://github.com/yourusername/gmail-ai-phish-guard.git
-2. Open chrome://extensions/
+---
+
+## Project Structure
+
+```
+Gmail-AI-Phish-Guard/
+│
+├── manifest.json
+├── background.js
+├── content.js
+├── utils.js
+│
+├── popup/
+│   ├── popup.html
+│   ├── popup.css
+│   └── popup.js
+│
+├── report/
+│   ├── report.html
+│   ├── report.css
+│   └── report.js
+│
+├── auth/
+│   ├── login.html
+│   ├── register.html
+│   └── success.html
+│
+└── assets/
+```
+
+---
+
+## Installation Guide
+
+1. Clone the repository
+   git clone [https://github.com/yourusername/gmail-ai-phish-guard.git](https://github.com/yourusername/gmail-ai-phish-guard.git)
+
+2. Open Chrome and navigate to:
+   chrome://extensions/
+
 3. Enable Developer Mode
+
 4. Click "Load Unpacked"
-5. Select project folder
-6. Open Gmail
-7. Click extension icon
 
-⧉ TECH STACK
+5. Select the project folder
 
-▣ JavaScript (ES6)
-▣ Chrome Extension Manifest V3
-▣ Chrome Storage API
-▣ Gmail DOM Parsing
-▣ Hybrid AI Heuristic + ML Model
-▣ HTML5 / CSS3
+6. Open Gmail and click the extension icon
 
-⟁ THREAT SIGNALS DETECTED
+---
 
-✦ Urgency-based manipulation
-✦ Banking impersonation
-✦ Credential harvesting
-✦ Suspicious link volume
-✦ Prize / lottery scams
-✦ Attachment bait
+## Technology Stack
 
-⟡ FUTURE ROADMAP
+* JavaScript (ES6)
+* Chrome Extension Manifest V3
+* Chrome Storage API
+* Gmail DOM Parsing
+* HTML5 / CSS3
+* Hybrid AI heuristic + lightweight ML model
 
-⟢ TensorFlow.js NLP model
-⟢ Real API-based ML scoring
-⟢ Link reputation APIs
-⟢ Gmail API integration
-⟢ Enterprise admin analytics
-
-⟁ SECURITY ASSURANCE
-
-• No external data transmission
-• All processing local
-• Uses Chrome Storage only
-• Lightweight & privacy-aware
-
-⟐ AUTHOR
-
-AI-powered cybersecurity research project
-Focused on:
-
-Browser Security
-
-Phishing Detection
-
-Hybrid AI Modeling
-
-Extension Architecture
+---
