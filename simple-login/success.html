@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Active</title>
+  <link rel="stylesheet" href="success.css">
+</head>
+
+<body>
+
+  <div class="active-box">
+    <h3>✅ Extension is Active</h3>
+    <p>You’re all set. Happy browsing!</p>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      chrome.runtime.sendMessage({ action: "closePopup" });
+    }, 500);
+  </script>
+
+</body>
+</html>

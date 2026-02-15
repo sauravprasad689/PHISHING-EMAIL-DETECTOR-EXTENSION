@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Phish Guard - Register</title>
+  <link rel="stylesheet" href="register.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+
+<div class="bubbles">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<div class="container">
+
+  <div class="image-section">
+    <img src="https://cdn-icons-png.flaticon.com/512/3064/3064155.png" alt="Spam Detection">
+    <h1>AI Spam Detection</h1>
+    <p>Protecting you from phishing & malicious emails.</p>
+  </div>
+
+  <div class="form-section">
+    <h2>Create Account</h2>
+
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+
+    <button onclick="register()">Create Account</button>
+  </div>
+
+</div>
+
+<script>
+function register() {
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  if (!email || !password) {
+    alert("Fill all fields");
+    return;
+  }
+
+  if (!email.includes("@")) {
+    alert("Enter valid email");
+    return;
+  }
+
+  if (password.length < 6) {
+    alert("Password must be at least 6 characters");
+    return;
+  }
+
+  localStorage.setItem("registeredEmail", email);
+  localStorage.setItem("registeredPassword", password);
+
+  gsap.to(".container", {
+    duration: 0.6,
+    scale: 1.05,
+    yoyo: true,
+    repeat: 1
+  });
+
+  setTimeout(() => {
+    alert("Registration successful");
+    window.location.href = "login.html";
+  }, 800);
+}
+
+gsap.from(".container", {
+  duration: 1.5,
+  scale: 0.8,
+  opacity: 0,
+  ease: "power3.out"
+});
+
+gsap.from(".image-section img", {
+  duration: 2,
+  rotation: 360,
+  opacity: 0,
+  ease: "back.out(1.7)"
+});
+</script>
+
+</body>
+</html>

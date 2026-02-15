@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Phish Guard - Login</title>
+
+<link rel="stylesheet" href="login.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+
+<body>
+
+<div class="bubbles">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<div class="container">
+
+  <div class="image-section">
+    <img src="https://www.freeiconspng.com/uploads/am-a-19-year-old-multimedia-artist-student-from-manila--21.png">
+    <h1>Secure Login</h1>
+    <p>AI powered phishing protection</p>
+  </div>
+
+  <div class="form-section">
+    <h2>Welcome Back</h2>
+    <input id="email" type="email" placeholder="Email">
+    <input id="password" type="password" placeholder="Password">
+
+    <button onclick="login()">
+      <span id="btnText">Login</span>
+      <div class="spinner" id="spinner"></div>
+    </button>
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+
+gsap.from(".container",{scale:.8,opacity:0,duration:1.2});
+
+function showToast(msg,type){
+  const toast=document.getElementById("toast");
+  toast.textContent=msg;
+  toast.className="toast "+(type||"");
+  gsap.to(toast,{opacity:1,y:-20,duration:.5});
+  setTimeout(()=>gsap.to(toast,{opacity:0,y:0,duration:.5}),2000);
+}
+
+function login(){
+  const btnText=document.getElementById("btnText");
+  const spinner=document.getElementById("spinner");
+
+  btnText.style.opacity="0";
+  spinner.style.display="block";
+
+  setTimeout(()=>{
+
+    const email=document.getElementById("email").value.trim();
+    const pass=document.getElementById("password").value.trim();
+
+    const sEmail=localStorage.getItem("registeredEmail");
+    const sPass=localStorage.getItem("registeredPassword");
+
+    spinner.style.display="none";
+    btnText.style.opacity="1";
+
+    if(!email || !pass){
+      showToast("Fill all fields","error");
+      return;
+    }
+
+    if(!sEmail || !sPass){
+      showToast("No account found","error");
+      return;
+    }
+
+    if(email===sEmail && pass===sPass){
+      showToast("Login Successful!");
+      gsap.from(".container",{scale:1.05,duration:.4});
+      setTimeout(()=>{
+        window.location.href="https://mail.google.com";
+      },1200);
+    }else{
+      gsap.from(".container",{x:-10,repeat:6,yoyo:true,duration:.1});
+      showToast("Invalid Credentials","error");
+    }
+
+  },1200);
+}
+
+</script>
+
+</body>
+</html>
