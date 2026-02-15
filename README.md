@@ -1,15 +1,3 @@
-Perfect 👍
-Now I’ll make it:
-
-• Clean
-• Fully copyable
-• Professional
-• Stylish but GitHub-friendly
-• No weird Unicode blocks that break formatting
-
-This version will look premium on GitHub and still feel powerful.
-
----
 
 # Gmail AI Phish Guard
 
